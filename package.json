@@ -1,12 +1,37 @@
 {
-  "name": "labo-string",
+  "name": "ssgs-labo-02",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "A CLI tool for string manipulation utilities including string reversal, palindrome checking, truncation, and character counting",
+  "main": "index.js",
+  "bin": {
+    "string-utils": "./index.js"
   },
-  "keywords": [],
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "cli",
+    "string",
+    "utilities",
+    "palindrome",
+    "string-manipulation"
+  ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^11.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
 }
