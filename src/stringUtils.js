@@ -4,6 +4,7 @@
  * @returns {string} - La stringa invertita.
  */
 function reverseString(str) {
+    if (!str) return '';
     return str.split('').reverse().join('');
 }
 
@@ -13,8 +14,9 @@ function reverseString(str) {
  * @returns {boolean} - True se la stringa è palindroma, altrimenti false.
  */
 function isPalindrome(str) {
-    const cleaned = str.toLowerCase().replace(/\s+/g, '');
-    return cleaned === reverseString(cleaned);
+    if (!str) return true;
+    const cleanStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+    return cleanStr === cleanStr.split('').reverse().join('');
 }
 
 /**
@@ -24,6 +26,7 @@ function isPalindrome(str) {
  * @returns {string} - La stringa troncata.
  */
 function truncateString(str, maxLength) {
+    if (!str) return '';
     if (str.length <= maxLength) return str;
     return str.slice(0, maxLength) + '...';
 }
@@ -41,9 +44,21 @@ function countCharacters(str) {
     return counts;
 }
 
+function capitalize(str) {
+    if (!str) return '';
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function countVowels(str) {
+    if (!str) return 0;
+    return (str.match(/[aeiouAEIOU]/g) || []).length;
+}
+
 module.exports = {
     reverseString,
     isPalindrome,
     truncateString,
     countCharacters,
+    capitalize,
+    countVowels,
 };
